@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vitorrosadev.github.io/ligadodeploy/sitemap.xml
+Sitemap: https://vitorrosadev.github.io/LigaDoDeploy/sitemap.xml

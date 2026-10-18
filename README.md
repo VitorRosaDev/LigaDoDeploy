@@ -2,7 +2,7 @@
 
 Landing page cinematográfica (dark mode, estética HQ/cyberpunk com glow neon) sobre sete heróis da tecnologia que atendem o chamado quando *"o sistema cai às 2 da manhã de uma sexta-feira"*.
 
-**Site publicado:** <https://vitorrosadev.github.io/ligadodeploy/>
+**Site publicado:** <https://vitorrosadev.github.io/LigaDoDeploy/>
 **Repositório:** <https://github.com/VitorRosaDev/LigaDoDeploy>
 
 | Hero (desktop) | Sections dos heróis | Footer |
