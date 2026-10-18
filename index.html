@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Liga do Deploy — A Sociedade da Justiça Ágil</title>
+    <meta
+      name="description"
+      content="Quando o sistema cai às 2 da manhã de uma sexta-feira, é este grupo de elite que recebe o chamado no help desk. Conheça os 7 heróis da Liga do Deploy."
+    />
+    <meta name="theme-color" content="#07080d" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="author" content="Vitor Rosa" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://vitorrosadev.github.io/ligadodeploy/" />
+
+    <!-- OPEN GRAPH / REDES SOCIAIS -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="A Liga do Deploy" />
+    <meta property="og:url" content="https://vitorrosadev.github.io/ligadodeploy/" />
+    <meta property="og:title" content="A Liga do Deploy — A Sociedade da Justiça Ágil" />
+    <meta
+      property="og:description"
+      content="A última linha de defesa entre o ambiente de produção e o caos total dos servidores. Conheça os 7 heróis da Liga."
+    />
+    <meta property="og:image" content="https://vitorrosadev.github.io/ligadodeploy/assets/og-liga-do-deploy.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Os sete heróis da Liga do Deploy em arte neon: Super-Stack, Bashman, Mulher-Agile, The Cache, Interface, Dataman e O Autômato" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Liga do Deploy — A Sociedade da Justiça Ágil" />
+    <meta name="twitter:description" content="Quando o sistema cai às 2 da manhã de uma sexta-feira, é este grupo que recebe o chamado." />
+    <meta name="twitter:image" content="https://vitorrosadev.github.io/ligadodeploy/assets/og-liga-do-deploy.jpg" />
+
+    <!-- DADOS ESTRUTURADOS (schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "A Liga do Deploy",
+        "alternateName": "A Sociedade da Justiça Ágil",
+        "url": "https://vitorrosadev.github.io/ligadodeploy/",
+        "inLanguage": "pt-BR",
+        "description": "Landing page humorística sobre a Liga do Deploy, sete heróis da tecnologia: Super-Stack, Bashman, Mulher-Agile, The Cache, Interface, Dataman e O Autômato.",
+        "author": { "@type": "Person", "name": "Vitor Rosa" }
+      }
+    </script>
+
+    <!-- FAVICON (SVG inline: escudo com seta de deploy) -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2307080d'/%3E%3Cpath d='M16 4l10 4v8c0 6-4.5 10-10 12C10.500 26 6 22 6 16V8z' fill='none' stroke='%2339ff88' stroke-width='2'/%3E%3Cpath d='M16 21V11m0 0l-4 4m4-4l4 4' fill='none' stroke='%2339ff88' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+
+    <!-- FONTES (Google Fonts, sem fontes locais) -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- carregamento não-bloqueante (media=print → all); display=block evita troca de fonte (CLS) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;500;600&display=block"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <style>
+        #preloader {
+          display: none !important;
+        }
+      </style>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;500;600&display=block"
+      />
+    </noscript>
+
+    <!-- Hero: pré-carrega as imagens do LCP (grupo responsivo + fundo) -->
+    <link rel="preload" as="image" href="assets/otimizadas/liga-busto-m.webp" media="(max-width: 600px)" fetchpriority="high" />
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="assets/otimizadas/liga-grupo-800.webp 800w, assets/otimizadas/liga-grupo-1280.webp 1280w, assets/liga-grupo.webp 1672w"
+      imagesizes="100vw"
+      media="(min-width: 601px)"
+      fetchpriority="high"
+    />
+    <link rel="preload" as="image" href="assets/otimizadas/main-edit-m.webp" media="(max-width: 600px)" />
+    <link rel="preload" as="image" href="assets/otimizadas/main-edit-1280.webp" media="(min-width: 601px)" />
+
+    <!-- marca que o JS está ativo (permite esconder o hero até as fontes carregarem, sem CLS) -->
+    <script>
+      document.documentElement.classList.add("js");
+      setTimeout(function () {
+        document.documentElement.classList.add("fontesProntas");
+      }, 3500); // trava de segurança
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <a class="pularConteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- PRELOADER: logo com stroke → fill + contador estilo terminal -->
+    <div id="preloader" role="status" aria-live="polite">
+      <svg viewBox="0 0 900 170" aria-label="Liga do Deploy" role="img">
+        <text x="450" y="135" text-anchor="middle">LIGA DO DEPLOY</text>
+      </svg>
+      <p class="contador mono" aria-hidden="true">
+        <span>Deploying…</span> <span id="contadorNumero">0</span>%
+      </p>
+      <div class="trilhoCarga" aria-hidden="true"><i id="barraCarga"></i></div>
+    </div>
+
+    <!-- CABEÇALHO FIXO (fora do smooth-wrapper para o position:fixed funcionar) -->
+    <header class="cabecalho">
+      <a class="marca" href="#topo" aria-label="A Liga do Deploy — voltar ao topo">
+        <span class="marcaIcone" aria-hidden="true">&gt;_</span>
+        <span class="marcaTexto">LIGA DO DEPLOY</span>
+      </a>
+      <p class="statusCabecalho mono" aria-hidden="true">v1.0 · main · <span>sem deploy na sexta</span></p>
+    </header>
+
+    <!-- MINI-NAVEGAÇÃO LATERAL (dots 01–07) -->
+    <nav class="navDots" aria-label="Heróis da Liga">
+      <ol>
+        <li><a href="#super-stack" data-nome="Super-Stack" aria-label="01 Super-Stack"><span>01</span></a></li>
+        <li><a href="#bashman" data-nome="Bashman" aria-label="02 Bashman"><span>02</span></a></li>
+        <li><a href="#mulher-agile" data-nome="Mulher-Agile" aria-label="03 Mulher-Agile"><span>03</span></a></li>
+        <li><a href="#the-cache" data-nome="The Cache" aria-label="04 The Cache"><span>04</span></a></li>
+        <li><a href="#interface" data-nome="Interface" aria-label="05 Interface"><span>05</span></a></li>
+        <li><a href="#dataman" data-nome="Dataman" aria-label="06 Dataman"><span>06</span></a></li>
+        <li><a href="#automato" data-nome="O Autômato" aria-label="07 O Autômato"><span>07</span></a></li>
+      </ol>
+    </nav>
+
+    <!-- DIVS SCROLLSMOOTHER -->
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main id="conteudo">
+          <!-- ============ HERO ============ -->
+          <section class="hero" id="topo" aria-labelledby="tituloHero">
+            <!-- Fundo: sala de servidores (poster) + vídeo só no desktop -->
+            <div class="heroCamada heroFundo" data-speed="0.7" aria-hidden="true">
+              <picture>
+                <source media="(max-width: 600px)" srcset="assets/otimizadas/main-edit-m.webp" width="380" height="570" />
+                <img
+                  src="assets/otimizadas/main-edit-1280.webp"
+                  alt=""
+                  width="1280"
+                  height="720"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
+              <video
+                class="heroVideo"
+                poster="assets/otimizadas/main-edit-1280.webp"
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <source data-src="assets/video/hero.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            <!-- Canvas Three.js (partículas "código caindo") — só desktop -->
+            <canvas class="heroParticulas" aria-hidden="true"></canvas>
+
+            <!-- Grupo dos 7 heróis -->
+            <div class="heroCamada heroGrupo" data-speed="0.88">
+              <picture>
+                <source media="(max-width: 600px)" srcset="assets/otimizadas/liga-busto-m.webp" width="800" height="800" />
+                <img
+                  src="assets/otimizadas/liga-grupo-1280.webp"
+                  srcset="assets/otimizadas/liga-grupo-800.webp 800w, assets/otimizadas/liga-grupo-1280.webp 1280w, assets/liga-grupo.webp 1672w"
+                  sizes="100vw"
+                  alt="Os sete heróis da Liga do Deploy lado a lado: Mulher-Agile, Super-Stack, Interface, O Autômato, The Cache, Bashman e Dataman"
+                  width="1672"
+                  height="941"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+
+            <div class="heroConteudo">
+              <p class="heroStatus mono">status: <strong>PRODUCTION DOWN</strong> <span aria-hidden="true">🔥</span></p>
+              <h1 id="tituloHero" class="heroTitulo" aria-label="A Liga do Deploy">
+                <span class="linhaTitulo" aria-hidden="true">A LIGA</span>
+                <span class="linhaTitulo" aria-hidden="true">DO DEPLOY</span>
+              </h1>
+              <p class="heroSubtitulo">A Sociedade da Justiça Ágil</p>
+              <p class="heroTagline">
+                Quando o sistema cai às 2 da manhã de uma sexta-feira, é este grupo que recebe o chamado.
+              </p>
+              <a class="botaoPrincipal" href="#super-stack" data-rolar="#super-stack">
+                <span>CONHEÇA A LIGA</span>
+                <span class="botaoSeta" aria-hidden="true">↓</span>
+              </a>
+            </div>
+
+            <div class="indicadorScroll" aria-hidden="true">
+              <span class="mono">scroll</span>
+              <i></i>
+            </div>
+          </section>
+
+          <!-- ETAPA 3: SECTIONS DOS HERÓIS ENTRAM AQUI -->
+          <!-- SECTIONS DOS 7 HERÓIS (mesmo template, varia só data-lado e --tema) -->
+          <!-- ============ 01/07 · SUPER-STACK ============ -->
+          <section class="secaoHeroi" id="super-stack" data-lado="esquerda" data-num="01" aria-labelledby="titulo-super-stack" style="--tema:var(--tema-superstack);--tema2:var(--tema2-superstack)">
+            <div class="fundoHeroi" aria-hidden="true"></div>
+            <div class="personagem" data-speed="1.08">
+              <span class="glowHeroi" aria-hidden="true"></span>
+              <span class="auraAzul" aria-hidden="true"></span>
+              <div class="personagemMoldura">
+                <picture>
+                  <source type="image/webp" srcset="assets/otimizadas/super-stack-640.webp 640w, assets/otimizadas/super-stack-960.webp 960w" sizes="(max-width: 600px) 80vw, 42vw" />
+                  <img src="assets/otimizadas/super-stack-960.webp" alt="Super-Stack, o herói Full-Stack Sênior, de braços cruzados em pose heroica, com jaqueta azul e laranja com o símbolo &lt;/&gt; no peito e contorno neon" width="1024" height="1536" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+            </div>
+            <div class="conteudoHeroi">
+              <p class="numeracao mono">01<span>/07</span></p>
+              <h2 id="titulo-super-stack" class="nomeHeroi textoSplit">SUPER-STACK</h2>
+              <p class="subtituloHeroi">O líder</p>
+              <p class="cargoHeroi mono"><span aria-hidden="true">&gt;</span> Full-Stack Sênior</p>
+              <p class="bioHeroi">O herói Full-Stack Sênior. Veio de um planeta distante chamado “Vale do Silício” e foi criado por um casal humilde no interior de um repositório Open Source. Ele voa pelas camadas da aplicação, desde a manipulação de ponteiros na memória até o CSS perfeitamente centralizado. Consegue sustentar uma arquitetura monolítica inteira sozinho nas costas.</p>
+              <div class="fichaTecnica" role="group" aria-label="Ficha técnica de SUPER-STACK">
+                <div class="fichaTopo mono" aria-hidden="true"><span class="pontos"><i></i><i></i><i></i></span><span class="fichaPrompt">liga@deploy:~/super-stack$ cat ficha.txt</span></div>
+                <dl>
+            <div class="linhaFicha">
+              <dt>PODERES</dt>
+              <dd><ul><li>Visão de raio-x para debugar código alheio.</li><li>Sopro congelante para esfriar servidores superaquecidos.</li></ul></dd>
+            </div>
+            <div class="linhaFicha linhaFraqueza">
+              <dt>FRAQUEZA</dt>
+              <dd><ul><li>Código legado em Cobol ou PHP 4 sem nenhum comentário. A proximidade o faz perder as forças e a vontade de viver.</li></ul></dd>
+            </div>
+                </dl>
+                <ul class="niveis mono"><li><span class="nivelRotulo">RAIO-X</span><span class="barra" style="--v:0.96" aria-hidden="true"><i></i></span><span class="nivelValor">96</span></li><li><span class="nivelRotulo">VOO</span><span class="barra" style="--v:0.91" aria-hidden="true"><i></i></span><span class="nivelValor">91</span></li><li><span class="nivelRotulo">SOPRO</span><span class="barra" style="--v:0.88" aria-hidden="true"><i></i></span><span class="nivelValor">88</span></li></ul>
+              </div>
+              
+            </div>
+          </section>
+
+          <!-- ============ 02/07 · BASHMAN ============ -->
+          <section class="secaoHeroi" id="bashman" data-lado="direita" data-num="02" aria-labelledby="titulo-bashman" style="--tema:var(--tema-bashman);--tema2:var(--tema-bashman)">
+            <div class="fundoHeroi" aria-hidden="true"></div>
+            <div class="personagem" data-speed="1.08">
+              <span class="glowHeroi" aria-hidden="true"></span>
+              
+              <div class="personagemMoldura">
+                <picture>
+                  <source type="image/webp" srcset="assets/otimizadas/bashman-640.webp 640w, assets/otimizadas/bashman-960.webp 960w" sizes="(max-width: 600px) 80vw, 42vw" />
+                  <img src="assets/otimizadas/bashman-960.webp" alt="Bashman, o engenheiro DevOps, encapuzado e de máscara, segurando um laptop com o prompt de terminal neon verde e um cinto de utilidades cheio de equipamentos" width="1024" height="1536" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+            </div>
+            <div class="conteudoHeroi">
+              <p class="numeracao mono">02<span>/07</span></p>
+              <h2 id="titulo-bashman" class="nomeHeroi textoSplit">BASHMAN</h2>
+              <p class="subtituloHeroi">O cavaleiro sombrio do terminal</p>
+              <p class="cargoHeroi mono"><span aria-hidden="true">&gt;</span> DevOps &amp; SysAdmin</p>
+              <p class="bioHeroi">O Engenheiro DevOps e SysAdmin. Ele não tem superpoderes genéticos (não costuma codar um app do zero), mas é o herói mais preparado da equipe. Trabalha exclusivamente nas sombras do Dark Mode e resolve crimes de infraestrutura usando apenas a linha de comando.<span class="cursorTerminal" aria-hidden="true"></span></p>
+              <div class="fichaTecnica" role="group" aria-label="Ficha técnica de BASHMAN">
+                <div class="fichaTopo mono" aria-hidden="true"><span class="pontos"><i></i><i></i><i></i></span><span class="fichaPrompt">liga@deploy:~/bashman$ cat ficha.txt <span class="cursorTerminal" aria-hidden="true"></span></span></div>
+                <dl>
+            <div class="linhaFicha">
+              <dt>ARMAS</dt>
+              <dd><ul><li>Um “cinto de utilidades” infinito contendo scripts Bash, contêineres Docker de emergência e instâncias da AWS prontas para escalar.</li></ul></dd>
+            </div>
+            <div class="linhaFicha linhaFraqueza">
+              <dt>MAIOR INIMIGO</dt>
+              <dd><ul><li>O “Palhaço” do “Na minha máquina funciona”.</li></ul></dd>
+            </div>
+                </dl>
+                <ul class="niveis mono"><li><span class="nivelRotulo">BASH</span><span class="barra" style="--v:0.98" aria-hidden="true"><i></i></span><span class="nivelValor">98</span></li><li><span class="nivelRotulo">DOCKER</span><span class="barra" style="--v:0.93" aria-hidden="true"><i></i></span><span class="nivelValor">93</span></li><li><span class="nivelRotulo">AWS</span><span class="barra" style="--v:0.9" aria-hidden="true"><i></i></span><span class="nivelValor">90</span></li></ul>
+              </div>
+              
+            </div>
+          </section>
+
+          <!-- ============ 03/07 · MULHER-AGILE ============ -->
+          <section class="secaoHeroi" id="mulher-agile" data-lado="esquerda" data-num="03" aria-labelledby="titulo-mulher-agile" style="--tema:var(--tema-agile);--tema2:var(--tema-agile)">
+            <div class="fundoHeroi" aria-hidden="true"></div>
+            <div class="personagem" data-speed="1.08">
+              <span class="glowHeroi" aria-hidden="true"></span>
+              
+              <div class="personagemMoldura">
+                <picture>
+                  <source type="image/webp" srcset="assets/otimizadas/mulher-agile-640.webp 640w, assets/otimizadas/mulher-agile-960.webp 960w" sizes="(max-width: 600px) 80vw, 42vw" />
+                  <img src="assets/otimizadas/mulher-agile-960.webp" alt="Mulher-Agile, a Product Manager, guerreira de capa verde-esmeralda, com escudo da Blindagem em uma mão e a espada da Verdade na outra" width="1696" height="2528" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+            </div>
+            <div class="conteudoHeroi">
+              <p class="numeracao mono">03<span>/07</span></p>
+              <h2 id="titulo-mulher-agile" class="nomeHeroi textoSplit">MULHER-AGILE</h2>
+              <p class="subtituloHeroi">A super poderosa</p>
+              <p class="cargoHeroi mono"><span aria-hidden="true">&gt;</span> Product Manager</p>
+              <p class="bioHeroi">A Product Manager (PM) e guardiã da metodologia. Uma guerreira amazona nascida na ilha paradisíaca do Kanban. Ela traz ordem ao caos do desenvolvimento e mantém a paz entre a tribo dos Desenvolvedores e o império dos Stakeholders.</p>
+              <div class="fichaTecnica" role="group" aria-label="Ficha técnica de MULHER-AGILE">
+                <div class="fichaTopo mono" aria-hidden="true"><span class="pontos"><i></i><i></i><i></i></span><span class="fichaPrompt">liga@deploy:~/mulher-agile$ cat ficha.txt</span></div>
+                <dl>
+            <div class="linhaFicha">
+              <dt>ARMAS</dt>
+              <dd><ul><li>O escudo da Blindagem, que repele pedidos de “features de última hora” do cliente, e a espada da Verdade, usada durante as reuniões de Daily para forçar o dev a confessar se a task realmente está “99% pronta”.</li></ul></dd>
+            </div>
+                </dl>
+                <ul class="niveis mono"><li><span class="nivelRotulo">BLINDAGEM</span><span class="barra" style="--v:0.94" aria-hidden="true"><i></i></span><span class="nivelValor">94</span></li><li><span class="nivelRotulo">VERDADE</span><span class="barra" style="--v:0.99" aria-hidden="true"><i></i></span><span class="nivelValor">99</span></li><li><span class="nivelRotulo">KANBAN</span><span class="barra" style="--v:0.97" aria-hidden="true"><i></i></span><span class="nivelValor">97</span></li></ul>
+              </div>
+              <div class="verdade" data-verdade>
+            <p class="verdadeRotulo mono"><span class="verdadeDaily">daily.standup</span> <span class="verdadePergunta">“tá 99% pronta?”</span></p>
+            <div class="verdadeTrilho" aria-hidden="true"><i></i></div>
+            <p class="verdadeResultado mono"><s>99%</s> <strong>63% pronta</strong> <span>— espada da Verdade aplicada</span></p>
+          </div>
+            </div>
+          </section>
+
+          <!-- ============ 04/07 · THE CACHE ============ -->
+          <section class="secaoHeroi" id="the-cache" data-lado="direita" data-num="04" aria-labelledby="titulo-the-cache" style="--tema:var(--tema-cache);--tema2:var(--tema2-cache)">
+            <div class="fundoHeroi" aria-hidden="true"></div>
+            <div class="personagem" data-speed="1.08">
+              <span class="glowHeroi" aria-hidden="true"></span>
+              <span class="speedLines" aria-hidden="true"></span>
+              <div class="personagemMoldura">
+                <picture>
+                  <source type="image/webp" srcset="assets/otimizadas/the-cache-640.webp 640w, assets/otimizadas/the-cache-960.webp 960w" sizes="(max-width: 600px) 80vw, 42vw" />
+                  <img src="assets/otimizadas/the-cache-960.webp" alt="The Cache, o desenvolvedor Front-End Mobile, de óculos escuros e uniforme vermelho com o símbolo do React, em plena corrida em alta velocidade" width="1024" height="1536" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+            </div>
+            <div class="conteudoHeroi">
+              <p class="numeracao mono">04<span>/07</span></p>
+              <h2 id="titulo-the-cache" class="nomeHeroi textoSplit">THE CACHE</h2>
+              <p class="subtituloHeroi">O velocista</p>
+              <p class="cargoHeroi mono"><span aria-hidden="true">&gt;</span> Front-End Mobile</p>
+              <p class="bioHeroi">O Desenvolvedor Front-End Mobile. O homem mais rápido do mundo na renderização de interfaces. Após ser atingido por um raio de otimização de performance, ele ganhou a habilidade de manipular o DOM e renderizar componentes em milissegundos cruzando as barreiras do React Native e do Expo.</p>
+              <div class="fichaTecnica" role="group" aria-label="Ficha técnica de THE CACHE">
+                <div class="fichaTopo mono" aria-hidden="true"><span class="pontos"><i></i><i></i><i></i></span><span class="fichaPrompt">liga@deploy:~/the-cache$ cat ficha.txt</span></div>
+                <dl>
+            <div class="linhaFicha">
+              <dt>PODERES</dt>
+              <dd><ul><li>Velocidade de raciocínio extremo e a capacidade de realizar o Hot Reload no aplicativo antes mesmo de você terminar de piscar.</li></ul></dd>
+            </div>
+            <div class="linhaFicha linhaFraqueza">
+              <dt>FRAQUEZA</dt>
+              <dd><ul><li>Fica paralisado se o cliente usar uma internet 3G no interior.</li></ul></dd>
+            </div>
+                </dl>
+                <ul class="niveis mono"><li><span class="nivelRotulo">VELOCIDADE</span><span class="barra" style="--v:0.99" aria-hidden="true"><i></i></span><span class="nivelValor">99</span></li><li><span class="nivelRotulo">HOT RELOAD</span><span class="barra" style="--v:0.96" aria-hidden="true"><i></i></span><span class="nivelValor">96</span></li><li><span class="nivelRotulo">INTERNET 3G</span><span class="barra" style="--v:0.08" aria-hidden="true"><i></i></span><span class="nivelValor">8</span></li></ul>
+              </div>
+              <p class="selo3g mono"><span aria-hidden="true">3G = ⚠</span><span class="somenteLeitor">Aviso: 3G igual a perigo</span></p>
+            </div>
+          </section>
+
+          <!-- ============ 05/07 · INTERFACE ============ -->
+          <section class="secaoHeroi" id="interface" data-lado="esquerda" data-num="05" aria-labelledby="titulo-interface" style="--tema:var(--tema-interface);--tema2:var(--tema-interface)">
+            <div class="fundoHeroi" aria-hidden="true"></div>
+            <div class="personagem" data-speed="1.08">
+              <span class="glowHeroi" aria-hidden="true"></span>
+              <span class="anelVerde" aria-hidden="true"></span>
+              <div class="personagemMoldura">
+                <picture>
+                  <source type="image/webp" srcset="assets/otimizadas/interface-640.webp 640w, assets/otimizadas/interface-960.webp 960w" sizes="(max-width: 600px) 80vw, 42vw" />
+                  <img src="assets/otimizadas/interface-960.webp" alt="Interface, o designer UI/UX, de óculos e jaqueta roxa, conjurando painéis holográficos do Figma e faixas de energia verde ao redor do corpo" width="1696" height="2528" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+            </div>
+            <div class="conteudoHeroi">
+              <p class="numeracao mono">05<span>/07</span></p>
+              <h2 id="titulo-interface" class="nomeHeroi textoSplit">INTERFACE</h2>
+              <p class="subtituloHeroi">Guardião do design intergaláctico</p>
+              <p class="cargoHeroi mono"><span aria-hidden="true">&gt;</span> UI/UX Designer</p>
+              <p class="bioHeroi">O Designer UI/UX e Mestre de Interfaces. Integrante da tropa intergaláctica dos Criativos, ele usa um anel energizado pela pura força de vontade e cafeína para materializar qualquer estrutura imaginável.</p>
+              <div class="fichaTecnica" role="group" aria-label="Ficha técnica de INTERFACE">
+                <div class="fichaTopo mono" aria-hidden="true"><span class="pontos"><i></i><i></i><i></i></span><span class="fichaPrompt">liga@deploy:~/interface$ cat ficha.txt</span></div>
+                <dl>
+            <div class="linhaFicha">
+              <dt>PODERES</dt>
+              <dd><ul><li>Capacidade de criar construtos visuais complexos e animações fluidas do nada absoluto, projetando mundos interativos inteiros usando a energia verde do Three.js e as dobras espaciais do GSAP.</li></ul></dd>
+            </div>
+            <div class="linhaFicha linhaFraqueza">
+              <dt>FRAQUEZA</dt>
+              <dd><ul><li>O medo primitivo de ouvir a frase: “Você pode aumentar um pouquinho a logo?”</li></ul></dd>
+            </div>
+                </dl>
+                <ul class="niveis mono"><li><span class="nivelRotulo">CRIAÇÃO</span><span class="barra" style="--v:0.95" aria-hidden="true"><i></i></span><span class="nivelValor">95</span></li><li><span class="nivelRotulo">CAFEÍNA</span><span class="barra" style="--v:0.98" aria-hidden="true"><i></i></span><span class="nivelValor">98</span></li><li><span class="nivelRotulo">PACIÊNCIA COM LOGO</span><span class="barra" style="--v:0.06" aria-hidden="true"><i></i></span><span class="nivelValor">6</span></li></ul>
+              </div>
+              <div class="zonaLogo" data-zona-logo>
+            <button class="botaoLogo mono" type="button" data-botao-logo>aumentar a logo</button>
+            <p class="respostaLogo mono" data-resposta-logo role="status"></p>
+          </div>
+            </div>
+          </section>
+
+          <!-- ============ 06/07 · DATAMAN ============ -->
+          <section class="secaoHeroi" id="dataman" data-lado="direita" data-num="06" aria-labelledby="titulo-dataman" style="--tema:var(--tema-dataman);--tema2:var(--tema2-dataman)">
+            <div class="fundoHeroi" aria-hidden="true"></div>
+            <div class="personagem" data-speed="1.08">
+              <span class="glowHeroi" aria-hidden="true"></span>
+              <div class="ondasSql" aria-hidden="true"><span class="sqlFlutuante mono" style="left:8%;top:6%;animation-delay:0s">SELECT * FROM tridente WHERE gargalo_io = 1;</span><span class="sqlFlutuante mono" style="left:62%;top:14%;animation-delay:-2s">JOIN tabela_15 USING (chave_primaria);</span><span class="sqlFlutuante mono" style="left:4%;top:44%;animation-delay:-4s">EXPLAIN ANALYZE SELECT cardume FROM mares;</span><span class="sqlFlutuante mono" style="left:58%;top:56%;animation-delay:-1s">CREATE INDEX idx_mares ON sete_mares(id);</span><span class="sqlFlutuante mono" style="left:12%;top:82%;animation-delay:-3s">COMMIT; -- sem rollback hoje</span><span class="sqlFlutuante mono" style="left:52%;top:90%;animation-delay:-5s">SELECT COUNT(*) FROM peixes_dba;</span></div>
+              <div class="personagemMoldura">
+                <picture>
+                  <source type="image/webp" srcset="assets/otimizadas/dataman-640.webp 640w, assets/otimizadas/dataman-960.webp 960w" sizes="(max-width: 600px) 80vw, 42vw" />
+                  <img src="assets/otimizadas/dataman-960.webp" alt="Dataman, o DBA e engenheiro de dados, coroado e com armadura azul e dourada, segurando o Tridente da Query Otimizada envolto em água elétrica" width="1696" height="2528" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+            </div>
+            <div class="conteudoHeroi">
+              <p class="numeracao mono">06<span>/07</span></p>
+              <h2 id="titulo-dataman" class="nomeHeroi textoSplit">DATAMAN</h2>
+              <p class="subtituloHeroi">O mestre dos datalakes e oceanos de dados</p>
+              <p class="cargoHeroi mono"><span aria-hidden="true">&gt;</span> DBA &amp; Eng. de Dados</p>
+              <p class="bioHeroi">O DBA (Administrador de Banco de Dados) e Engenheiro de Dados. Governante dos sete mares de informações não estruturadas e guardião das chaves primárias. Muitos o subestimam até precisarem de um JOIN complexo de 15 tabelas.</p>
+              <div class="fichaTecnica" role="group" aria-label="Ficha técnica de DATAMAN">
+                <div class="fichaTopo mono" aria-hidden="true"><span class="pontos"><i></i><i></i><i></i></span><span class="fichaPrompt">liga@deploy:~/dataman$ cat ficha.txt</span></div>
+                <dl>
+            <div class="linhaFicha">
+              <dt>PODERES</dt>
+              <dd><ul><li>Telepatia direta com clusters de servidores e a capacidade de comandar cardumes de tabelas do SQLite com perfeição.</li></ul></dd>
+            </div>
+            <div class="linhaFicha">
+              <dt>ARMA</dt>
+              <dd><ul><li>O Tridente da Query Otimizada, capaz de atravessar o gargalo de I/O mais denso.</li></ul></dd>
+            </div>
+                </dl>
+                <ul class="niveis mono"><li><span class="nivelRotulo">JOIN</span><span class="barra" style="--v:0.97" aria-hidden="true"><i></i></span><span class="nivelValor">97</span></li><li><span class="nivelRotulo">TELEPATIA</span><span class="barra" style="--v:0.92" aria-hidden="true"><i></i></span><span class="nivelValor">92</span></li><li><span class="nivelRotulo">I/O</span><span class="barra" style="--v:0.89" aria-hidden="true"><i></i></span><span class="nivelValor">89</span></li></ul>
+              </div>
+              
+            </div>
+          </section>
+
+          <!-- ============ 07/07 · O AUTÔMATO ============ -->
+          <section class="secaoHeroi" id="automato" data-lado="esquerda" data-num="07" aria-labelledby="titulo-automato" style="--tema:var(--tema-automato);--tema2:var(--tema2-automato)">
+            <div class="fundoHeroi" aria-hidden="true"></div>
+            <div class="personagem" data-speed="1.08">
+              <span class="glowHeroi" aria-hidden="true"></span>
+              <span class="scanline" aria-hidden="true"></span>
+              <div class="personagemMoldura">
+                <picture>
+                  <source type="image/webp" srcset="assets/otimizadas/automato-640.webp 640w, assets/otimizadas/automato-960.webp 960w" sizes="(max-width: 600px) 80vw, 42vw" />
+                  <img src="assets/otimizadas/automato-960.webp" alt="O Autômato, o engenheiro de RPA, humano reconstruído como robô de aço cinza e detalhes amarelos, com capacete de visor azul e painéis de dados no corpo" width="1696" height="2528" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+            </div>
+            <div class="conteudoHeroi">
+              <p class="numeracao mono">07<span>/07</span></p>
+              <h2 id="titulo-automato" class="nomeHeroi textoSplit">O AUTÔMATO</h2>
+              <p class="subtituloHeroi">Homem máquina</p>
+              <p class="cargoHeroi mono"><span aria-hidden="true">&gt;</span> RPA &amp; Automação</p>
+              <p class="bioHeroi">O Engenheiro de RPA e Automação. Ele sofreu um acidente trágico com tarefas manuais repetitivas e teve que ser reconstruído fundindo seu corpo diretamente com a Matrix do sistema. Metade homem, metade rotina programada.</p>
+              <div class="fichaTecnica" role="group" aria-label="Ficha técnica de O AUTÔMATO">
+                <div class="fichaTopo mono" aria-hidden="true"><span class="pontos"><i></i><i></i><i></i></span><span class="fichaPrompt">liga@deploy:~/automato$ cat ficha.txt</span></div>
+                <dl>
+            <div class="linhaFicha">
+              <dt>PODERES</dt>
+              <dd><ul><li>Consegue construir softwares de desktop imponentes em C# WPF apenas com o pensamento e utiliza o canhão de plasma do Playwright para navegar e extrair informações da web de forma autônoma, destruindo tarefas burocráticas instantaneamente.</li></ul></dd>
+            </div>
+                </dl>
+                <ul class="niveis mono"><li><span class="nivelRotulo">AUTOMAÇÃO</span><span class="barra" style="--v:0.99" aria-hidden="true"><i></i></span><span class="nivelValor">99</span></li><li><span class="nivelRotulo">C# WPF</span><span class="barra" style="--v:0.94" aria-hidden="true"><i></i></span><span class="nivelValor">94</span></li><li><span class="nivelRotulo">PLAYWRIGHT</span><span class="barra" style="--v:0.96" aria-hidden="true"><i></i></span><span class="nivelValor">96</span></li></ul>
+              </div>
+              <p class="contadorTarefas mono"><span class="contadorNumero" data-contador-tarefas>12.847</span> <span>tarefas manuais destruídas</span></p>
+            </div>
+          </section>
+
+          <!-- /SECTIONS DOS HERÓIS -->
+        </main>
+
+        <!-- ============ FOOTER (revelado por baixo da main) ============ -->
+        <footer class="rodape" id="contato">
+          <!-- 7 heróis em fila: a imagem é fatiada em 7 colunas para entrar em stagger -->
+          <div class="rodapeHerois" role="img" aria-label="Os sete heróis da Liga do Deploy em fila: The Cache, Bashman, Mulher-Agile, Super-Stack, Interface, Dataman e O Autômato">
+            <span class="fatia" style="--i: 0" aria-hidden="true"></span>
+            <span class="fatia" style="--i: 1" aria-hidden="true"></span>
+            <span class="fatia" style="--i: 2" aria-hidden="true"></span>
+            <span class="fatia" style="--i: 3" aria-hidden="true"></span>
+            <span class="fatia" style="--i: 4" aria-hidden="true"></span>
+            <span class="fatia" style="--i: 5" aria-hidden="true"></span>
+            <span class="fatia" style="--i: 6" aria-hidden="true"></span>
+          </div>
+
+          <!-- Marquee infinito gigante (logo abaixo dos heróis, atrás dos pés deles) -->
+          <!-- Mobile: heróis em formação de pôster (substitui a fila de 7 fatias abaixo de 600px) -->
+          <div class="ligaPoster" role="img" aria-label="Os sete heróis da Liga do Deploy reunidos em formação: Super-Stack ao centro, cercado por O Autômato, Mulher-Agile, The Cache, Dataman, Interface e Bashman">
+            <figure class="ph ph-automato" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/automato-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
+            </figure>
+            <figure class="ph ph-agile" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/mulher-agile-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
+            </figure>
+            <figure class="ph ph-cache" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/the-cache-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
+            </figure>
+            <figure class="ph ph-dataman" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/dataman-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
+            </figure>
+            <figure class="ph ph-interface" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/interface-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
+            </figure>
+            <figure class="ph ph-bashman" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/bashman-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
+            </figure>
+            <figure class="ph ph-superstack" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/super-stack-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
+            </figure>
+          </div>
+
+          <div class="textoInfinito" aria-hidden="true">
+            <h4>LIGA DO DEPLOY • SEM DEPLOY NA SEXTA •&nbsp;</h4>
+            <h4>LIGA DO DEPLOY • SEM DEPLOY NA SEXTA •&nbsp;</h4>
+          </div>
+
+          <div class="conteudoFooter">
+            <div class="ctaFinal">
+              <p class="mono ctaEyebrow"><span aria-hidden="true">$</span> ./chamar-a-liga.sh</p>
+              <h2 class="textoSplit">CHAME A LIGA:</h2>
+              <a class="botaoPrincipal" href="mailto:helpdesk@ligadodeploy.dev?subject=Chamado%20para%20a%20Liga">
+                <span>ABRA UM CHAMADO NO HELP DESK</span>
+                <span class="botaoSeta" aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <nav class="institucional" aria-label="Institucional">
+              <h3>A SOCIEDADE</h3>
+              <ul>
+                <li><a href="#">Manifesto Ágil (quase)</a></li>
+                <li><a href="#">Código de Conduta</a></li>
+                <li><a href="#">Política de Rollback</a></li>
+                <li><a href="#">Status da Produção</a></li>
+              </ul>
+            </nav>
+
+            <div class="social">
+              <h3>SIGA A LIGA</h3>
+              <ul>
+                <li>
+                  <a href="#" aria-label="GitHub da Liga do Deploy">
+                    <svg viewBox="0 0 16 16" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" aria-label="LinkedIn da Liga do Deploy">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" aria-label="Instagram da Liga do Deploy">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" aria-label="X (Twitter) da Liga do Deploy">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 2H22l-7.2 8.2L23 22h-6.6l-5.2-6.8L5.3 22H2.2l7.7-8.8L1.6 2h6.8l4.7 6.2L18.9 2z"/></svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="copyright mono">© Liga do Deploy — testado em produção</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- GSAP 3.14.1 (mesmos scripts da referência) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"
+      integrity="sha384-UoFnwgbUNlK0Rwou15cSoyrXQvKrOUxV8AkCoGKSSd0sxVeJ95ARU8uGMkMZhzpB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"
+      integrity="sha384-s2VjM2y83PpWd6b7vX27Pt3ZhwavFDwKXFvapmlQrOzBo9vX990dSgHdpqPgOfF0"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"
+      integrity="sha384-v6yGl7PV91lKkHPtNXmmbTvgAnBxz7jOQ5E/t+tWqz31N2g+x5DGpcw99Vsok09K"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"
+      integrity="sha384-og/mrD2vdMqjyGxWqnubcUzxmFGIKlqgiUIJVC/vl7T5XcGvrS+LTFHrx7FntOhn"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

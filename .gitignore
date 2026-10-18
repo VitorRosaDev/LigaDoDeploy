@@ -1,0 +1,21 @@
+# Originais de alta resolução com nomes acentuados (duplicados pelos slugs equivalentes em assets/)
+assets/*preciso e calculista.webp
+assets/Bashman com Laptop Neon.webp
+assets/Dataman segurando o tridente.webp
+assets/Interface projetando experiências.webp
+assets/Liga do Deploy.webp
+assets/Mulher-Agile-Com-Espada-E-Escudo.webp
+assets/Super-Stack em Pose Heroica.webp
+assets/The Cache em Alta Velocidade.webp
+
+# Variantes não utilizadas pela página (versões pesadas e anteriores)
+assets/otimizadas/liga-footer-1920.webp
+assets/otimizadas/liga-footer-1100.webp
+assets/otimizadas/liga-grupo-m.webp
+assets/main-edit.webp
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
