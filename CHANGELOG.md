@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.0 — 2026-10-18
+
+Composição mobile (até 600px) do hero e do footer.
+
+- Hero mobile: o grupo agora é um pôster de 7 bustos sobrepostos, que entra com escala, rotação e ricochete (laterais primeiro, Super-Stack por último).
+- Footer mobile: os heróis ficam em duas fileiras lado a lado (3 em cima, 4 embaixo), com a mesma animação de escala, rotação e ricochete.
+- Ajuste do espaçamento do hero e do marquee do footer para as novas composições.
+- Desktop e tablet sem mudanças.
+
 ## 1.0.0 — 2026-10-18
 
 Primeira versão publicada.

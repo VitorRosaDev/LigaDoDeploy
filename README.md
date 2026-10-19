@@ -65,13 +65,13 @@ CHANGELOG.md        histórico de versões
 - **Sections dos heróis:** personagem com glow e flutuação, ficha técnica estilo terminal com barras de poder em `scrub`, texto com blur+opacity.
 - **Extras de personalidade:** aura azul (Super-Stack), cursor de terminal (Bashman), barra "99% pronta?" que desmente (Mulher-Agile), speed-lines e selo "3G = ⚠" (The Cache), anel pulsante e botão "aumentar a logo" que foge (Interface), queries SQL flutuando (Dataman), glitch e contador de tarefas destruídas (O Autômato).
 - **Navegação:** pontos laterais 01–07 que marcam a section ativa e rolam suavemente até ela.
-- **Footer:** revelado por baixo (`y:-30%` em scrub), heróis entrando em stagger (fila no desktop, formação de pôster no mobile) e marquee infinito com `mix-blend-mode`.
+- **Footer:** revelado por baixo (`y:-30%` em scrub), heróis entrando em stagger (fila de 7 fatias no desktop, duas fileiras 3 + 4 com animação em escala no mobile) e marquee infinito com `mix-blend-mode`.
 
 ## Responsivo
 
 Breakpoints em **600px** e **1024px**.
 
-- **Mobile:** o hero usa uma composição própria com os 7 bustos (`liga-busto-m.webp`) e o footer usa a formação de pôster. O vídeo e as partículas rodam em versão mais leve (menos partículas, pixel ratio 1) e entram ~2,5s após o preloader.
+- **Mobile:** o hero usa um pôster com os 7 bustos sobrepostos (`.ligaPoster`, entrada em escala/rotação/ricochete) e o footer usa duas fileiras lado a lado, 3 em cima e 4 embaixo (`.ligaFila`, mesma animação). O vídeo e as partículas rodam em versão mais leve (menos partículas, pixel ratio 1) e entram ~2,5s após o preloader.
 - **Desktop/tablet:** imagem do grupo em tela cheia e fila de 7 heróis no footer.
 
 ## Acessibilidade
@@ -96,7 +96,8 @@ Se o GSAP (CDN) não carregar, a página aparece em modo estático e legível.
 
 - **Cor de um herói:** variáveis `--tema-*` / `--tema2-*` em `:root` (`style.css`) e o atributo `style="--tema:…"` da section em `index.html`.
 - **Novo herói:** copie uma `<section class="secaoHeroi">`, ajuste `id`, `data-lado`, `data-num` e o tema, e inclua o link no `nav.navDots`.
-- **Posição dos heróis do footer mobile:** variáveis `--x`, `--y`, `--w`, `--r` das classes `.ph-*`.
+- **Posição dos heróis do pôster mobile (hero):** variáveis `--x`, `--y`, `--w`, `--r` das classes `.ph-*`.
+- **Fileiras do footer mobile:** ordem dos `<figure class="fh">` em `.ligaFila` (os 3 primeiros são a fileira de cima; `grid-column: span 4` / `span 3` no `style.css`).
 - **Velocidade do marquee:** `animation` de `.textoInfinito h4`.
 
 ## Publicação (GitHub Pages)

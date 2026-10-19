@@ -177,7 +177,7 @@
             <!-- Grupo dos 7 heróis -->
             <div class="heroCamada heroGrupo" data-speed="0.88">
               <picture>
-                <source media="(max-width: 600px)" srcset="assets/otimizadas/liga-busto-m.webp" width="800" height="800" />
+                <source media="(max-width: 600px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
                 <img
                   src="assets/otimizadas/liga-grupo-1280.webp"
                   srcset="assets/otimizadas/liga-grupo-800.webp 800w, assets/otimizadas/liga-grupo-1280.webp 1280w, assets/liga-grupo.webp 1672w"
@@ -189,6 +189,30 @@
                   decoding="async"
                 />
               </picture>
+            <!-- Mobile: heróis em formação de pôster (substitui a imagem do grupo abaixo de 600px) -->
+            <div class="ligaPoster" role="img" aria-label="Os sete heróis da Liga do Deploy reunidos em formação: Super-Stack ao centro, cercado por O Autômato, Mulher-Agile, The Cache, Dataman, Interface e Bashman">
+              <figure class="ph ph-automato" aria-hidden="true">
+                <div class="busto"><img src="assets/otimizadas/automato-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
+              </figure>
+              <figure class="ph ph-agile" aria-hidden="true">
+                <div class="busto"><img src="assets/otimizadas/mulher-agile-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
+              </figure>
+              <figure class="ph ph-cache" aria-hidden="true">
+                <div class="busto"><img src="assets/otimizadas/the-cache-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
+              </figure>
+              <figure class="ph ph-dataman" aria-hidden="true">
+                <div class="busto"><img src="assets/otimizadas/dataman-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
+              </figure>
+              <figure class="ph ph-interface" aria-hidden="true">
+                <div class="busto"><img src="assets/otimizadas/interface-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
+              </figure>
+              <figure class="ph ph-bashman" aria-hidden="true">
+                <div class="busto"><img src="assets/otimizadas/bashman-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
+              </figure>
+              <figure class="ph ph-superstack" aria-hidden="true">
+                <div class="busto"><img src="assets/otimizadas/super-stack-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
+              </figure>
+            </div>
             </div>
 
             <div class="heroConteudo">
@@ -490,28 +514,28 @@
           </div>
 
           <!-- Marquee infinito gigante (logo abaixo dos heróis, atrás dos pés deles) -->
-          <!-- Mobile: heróis em formação de pôster (substitui a fila de 7 fatias abaixo de 600px) -->
-          <div class="ligaPoster" role="img" aria-label="Os sete heróis da Liga do Deploy reunidos em formação: Super-Stack ao centro, cercado por O Autômato, Mulher-Agile, The Cache, Dataman, Interface e Bashman">
-            <figure class="ph ph-automato" aria-hidden="true">
-              <div class="busto"><img src="assets/otimizadas/automato-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
-            </figure>
-            <figure class="ph ph-agile" aria-hidden="true">
+          <!-- Mobile: heróis em duas fileiras lado a lado, 3 em cima e 4 embaixo (substitui a fila de 7 fatias abaixo de 600px) -->
+          <div class="ligaFila" role="img" aria-label="Os sete heróis da Liga do Deploy em duas fileiras: Mulher-Agile, Super-Stack e Interface em cima; O Autômato, The Cache, Bashman e Dataman embaixo">
+            <figure class="fh fh-agile" aria-hidden="true">
               <div class="busto"><img src="assets/otimizadas/mulher-agile-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
             </figure>
-            <figure class="ph ph-cache" aria-hidden="true">
-              <div class="busto"><img src="assets/otimizadas/the-cache-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
+            <figure class="fh fh-superstack" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/super-stack-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
             </figure>
-            <figure class="ph ph-dataman" aria-hidden="true">
-              <div class="busto"><img src="assets/otimizadas/dataman-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
-            </figure>
-            <figure class="ph ph-interface" aria-hidden="true">
+            <figure class="fh fh-interface" aria-hidden="true">
               <div class="busto"><img src="assets/otimizadas/interface-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
             </figure>
-            <figure class="ph ph-bashman" aria-hidden="true">
+            <figure class="fh fh-automato" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/automato-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
+            </figure>
+            <figure class="fh fh-cache" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/the-cache-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
+            </figure>
+            <figure class="fh fh-bashman" aria-hidden="true">
               <div class="busto"><img src="assets/otimizadas/bashman-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
             </figure>
-            <figure class="ph ph-superstack" aria-hidden="true">
-              <div class="busto"><img src="assets/otimizadas/super-stack-640.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" /></div>
+            <figure class="fh fh-dataman" aria-hidden="true">
+              <div class="busto"><img src="assets/otimizadas/dataman-640.webp" alt="" width="1696" height="2528" loading="lazy" decoding="async" /></div>
             </figure>
           </div>
 

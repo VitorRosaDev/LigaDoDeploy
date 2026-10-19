@@ -99,7 +99,22 @@ function prepararHero() {
 
   // fundo e grupo NÃO começam com opacity 0: assim a imagem do LCP já é pintada sob o preloader
   tlHero.from(".heroFundo", { scale: 1.12, duration: 1.6 }, 0);
-  tlHero.from(".heroGrupo", { y: 60, duration: 1.4 }, 0.1);
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    // mobile: pôster de 7 bustos — os laterais "surgem" primeiro e o líder por último
+    const ordem = [".ph-automato", ".ph-dataman", ".ph-agile", ".ph-interface", ".ph-cache", ".ph-bashman"];
+    tlHero.from(ordem.map((s) => document.querySelector(s)), {
+      y: 110,
+      scale: 0.6,
+      opacity: 0,
+      rotate: (i) => (i % 2 ? 10 : -10),
+      duration: 0.8,
+      ease: "back.out(1.5)",
+      stagger: 0.14,
+    }, 0.3);
+    tlHero.from(".ph-superstack", { y: 140, scale: 0.5, opacity: 0, duration: 1, ease: "back.out(1.7)" }, 1.0);
+  } else {
+    tlHero.from(".heroGrupo", { y: 60, duration: 1.4 }, 0.1);
+  }
   tlHero.from(".heroStatus", { opacity: 0, y: 14, duration: 0.6 }, 0.3);
 
   // título gigante: chars entrando com stagger (SplitText com máscara por linha)
@@ -243,11 +258,11 @@ function animarPagina() {
     });
   });
 
-  // mobile: formação de pôster — os heróis "surgem" de baixo, os laterais primeiro e o líder por último
+  // mobile: duas fileiras (3 em cima, 4 embaixo) — os heróis "surgem" em escala, o líder por último
   mm.add("(max-width: 600px)", () => {
-    const ordem = [".ph-automato", ".ph-dataman", ".ph-agile", ".ph-interface", ".ph-cache", ".ph-bashman"];
+    const ordem = [".fh-agile", ".fh-interface", ".fh-automato", ".fh-dataman", ".fh-cache", ".fh-bashman"];
     const tl = gsap.timeline({
-      scrollTrigger: { trigger: ".ligaPoster", start: "top 80%" },
+      scrollTrigger: { trigger: ".ligaFila", start: "top 85%" },
     });
     tl.from(ordem.map((s) => document.querySelector(s)), {
       y: 110,
@@ -258,7 +273,7 @@ function animarPagina() {
       ease: "back.out(1.5)",
       stagger: 0.14,
     });
-    tl.from(".ph-superstack", { y: 140, scale: 0.5, opacity: 0, duration: 1, ease: "back.out(1.7)" }, "-=0.35");
+    tl.from(".fh-superstack", { y: 140, scale: 0.5, opacity: 0, duration: 1, ease: "back.out(1.7)" }, "-=0.35");
   });
 
   // marquee: pausa quando o footer está fora da tela

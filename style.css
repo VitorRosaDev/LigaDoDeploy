@@ -19,6 +19,7 @@
   --texto: rgba(240, 244, 255, 0.92);
   --texto-suave: rgba(214, 222, 240, 0.74);
   --linha: rgba(255, 255, 255, 0.12);
+  --perigo: #ff4d5e;
   --terminal: #39ff88;
 
   /* cores-tema dos heróis (usadas via --tema / --tema2 em cada section) */
@@ -620,7 +621,8 @@ h3 {
 
   /* mobile: composição própria com os 7 bustos (quadrada), acima do texto */
   .hero {
-    padding-top: calc(100vw + 0.5rem);
+    /* pôster: largura min(100%, 440px) e proporção 4 / 5.2 */
+    padding-top: calc(min(100vw, 440px) * 1.3 + 0.5rem);
   }
 
   .heroGrupo {
@@ -629,13 +631,9 @@ h3 {
     mask-image: linear-gradient(180deg, transparent 0, #000 8%, #000 76%, transparent 100%);
   }
 
+  /* a imagem lado a lado é só do desktop; no mobile entra o pôster */
   .heroGrupo picture {
-    height: auto;
-  }
-
-  .heroGrupo img {
-    height: auto;
-    object-fit: contain;
+    display: none;
   }
 
   .heroConteudo {
@@ -1457,7 +1455,8 @@ main {
 }
 
 /* ---- Mobile: heróis em formação de pôster (7 bustos sobrepostos) ---- */
-.ligaPoster {
+.ligaPoster,
+.ligaFila {
   display: none;
 }
 
@@ -1465,6 +1464,44 @@ main {
   .rodapeHerois {
     display: none;
   }
+
+  /* footer: duas fileiras lado a lado — 3 em cima, 4 embaixo */
+  .ligaFila {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+    z-index: 2;
+    width: min(100%, 440px);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    row-gap: 0.4rem;
+  }
+
+  .fh {
+    --glow: var(--tema-superstack);
+    position: relative;
+    grid-column: span 3;
+  }
+
+  .fh:nth-child(-n + 3) {
+    grid-column: span 4;
+  }
+
+  .fh::before {
+    content: "";
+    position: absolute;
+    inset: 8% -10% 0;
+    background: radial-gradient(closest-side, color-mix(in srgb, var(--glow) 55%, transparent), transparent);
+    opacity: 0.7;
+  }
+
+  .fh-superstack { --glow: var(--tema-superstack); }
+  .fh-agile      { --glow: var(--tema-agile); }
+  .fh-interface  { --glow: var(--tema-interface); }
+  .fh-automato   { --glow: var(--tema2-automato); }
+  .fh-cache      { --glow: var(--tema-cache); }
+  .fh-bashman    { --glow: var(--tema-bashman); }
+  .fh-dataman    { --glow: var(--tema2-dataman); }
 
   .ligaPoster {
     display: block;
@@ -1526,7 +1563,7 @@ main {
   }
 
   .textoInfinito {
-    margin-top: calc(-1 * clamp(4rem, 27vw, 8rem));
+    margin-top: calc(-1 * clamp(1.5rem, 8vw, 3rem));
   }
 
   .conteudoFooter {
